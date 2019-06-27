@@ -1,0 +1,46 @@
+﻿<Window x:Class="WpfInterfejsGraficzny.AddProductWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfInterfejsGraficzny"
+        mc:Ignorable="d"
+        Title="AddProductWindow" Height="300" Width="320">
+    <Window.Resources>
+        <!-- Konwerter listy kategorii do stringa -->
+        <local:StringCollectionConverter x:Key="StringCollectionConverter" />
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/><!-- ComboBox -->
+            <RowDefinition Height="Auto"/><!-- Nazwa -->
+            <RowDefinition Height="Auto"/><!-- Opis -->
+            <RowDefinition Height="Auto"/><!-- Kategorie -->
+            <RowDefinition Height="Auto"/><!-- Ilosc -->
+            <RowDefinition Height="Auto"/><!-- Cena -->
+            <RowDefinition Height="Auto"/><!-- Przycisk -->
+        </Grid.RowDefinitions>
+        <ComboBox SelectionChanged="CB_AvailableProductsSelectionChanged" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Name="CB_AvailableProducts"/>
+
+        <Label Grid.Row="1" Grid.Column="0" Content="Nazwa"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Name="TB_Nazwa" HorizontalAlignment="Stretch"/>
+        
+        <Label Grid.Row="2" Grid.Column="0" Content="Opis"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Name="TB_Opis" HorizontalAlignment="Stretch"/>
+
+        <Label Grid.Row="3" Grid.Column="0" Content="Kategorie"/>
+        <TextBox Text="{Binding Path=KategorieBind, Converter={StaticResource StringCollectionConverter}}" Grid.Row="3" Grid.Column="1" Name="TB_Kategorie" HorizontalAlignment="Stretch"/>
+
+        <Label Grid.Row="4" Grid.Column="0" Content="Ilosc"/>
+        <TextBox Grid.Row="4" Grid.Column="1" Name="TB_Ilosc" HorizontalAlignment="Stretch"/>
+        
+        <Label Grid.Row="5" Grid.Column="0" Content="Cena"/>
+        <TextBox Grid.Row="5" Grid.Column="1" Name="TB_Cena" HorizontalAlignment="Stretch"/>
+
+        <Button Click="AcceptAddProduct" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Content="Dodaj produkt"/>
+    </Grid>
+</Window>

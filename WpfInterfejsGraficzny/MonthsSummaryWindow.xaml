@@ -1,0 +1,27 @@
+﻿<Window x:Class="WpfInterfejsGraficzny.MonthsSummaryWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfInterfejsGraficzny"
+        mc:Ignorable="d"
+        Title="MonthsSummaryWindow" Height="300" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBox Grid.Row="0" Text="{Binding SearchField, UpdateSourceTrigger=PropertyChanged}" Margin="3" HorizontalAlignment="Stretch">
+            <TextBox.ToolTip>
+                <ToolTip Name="SearchFieldToolTip">
+                    <StackPanel>
+                        <TextBlock>NazwaKolumny&lt;wartość np: Rok &lt; 2017</TextBlock>
+                        <TextBlock>Łączenie warunków przez AND OR NOT</TextBlock>
+                        <TextBlock>Wartości tekstowe np: Nazwa miesiąca='wartość pola'</TextBlock>
+                    </StackPanel>
+                </ToolTip>
+            </TextBox.ToolTip>
+        </TextBox>
+        <DataGrid Grid.Row="1" Name="MonthsDataGrid" ItemsSource="{Binding}"/>
+    </Grid>
+</Window>

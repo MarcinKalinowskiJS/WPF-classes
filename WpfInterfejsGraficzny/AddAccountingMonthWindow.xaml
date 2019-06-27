@@ -1,0 +1,33 @@
+﻿<Window x:Class="WpfInterfejsGraficzny.AddAccountingMonthWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfInterfejsGraficzny"
+        mc:Ignorable="d"
+        Title="AddAccountingMonthWindow" Height="200" Width="250"
+        MinHeight="200" MinWidth="200">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <Label Content="Nazwa miesiąca" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.508,1.523" Margin="10,1,0,0"/>
+        <TextBox x:Name="TB_NazwaMiesiaca" Grid.Column="1" HorizontalAlignment="Stretch" Height="23" Margin="10,1,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+        
+        <Label Content="Rok" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.508,1.523" Margin="10,0,0,0" Grid.Row="1"/>
+        <TextBox x:Name="TB_Rok" Grid.Column="1" HorizontalAlignment="Stretch" Height="23" Margin="10,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Grid.Row="1"/>
+        
+        <Label Content="Przychód" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.508,1.523" Margin="10,0,0,0" Grid.Row="2"/>
+        <TextBox x:Name="TB_Przychod" Grid.Column="1" HorizontalAlignment="Stretch" Height="23" Margin="10,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Grid.Row="2"/>
+        
+        <Button Content="Dodaj miesiąc" Grid.Row="3" Grid.ColumnSpan="2" Click="BT_AcceptAddMonth"/>
+    </Grid>
+</Window>
